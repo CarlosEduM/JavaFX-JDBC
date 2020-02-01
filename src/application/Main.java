@@ -2,8 +2,8 @@ package application;
 	
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 
@@ -13,8 +13,12 @@ public class Main extends Application {
 	public void start(Stage stage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
-			Parent parent = loader.load();
-			Scene mainScene = new Scene(parent);
+			ScrollPane pane = loader.load();
+			
+			pane.setFitToHeight(true);
+			pane.setFitToWidth(true);
+			
+			Scene mainScene = new Scene(pane);
 			stage.setScene(mainScene);
 			stage.setTitle("Sample JavaFX application");
 			stage.show();
