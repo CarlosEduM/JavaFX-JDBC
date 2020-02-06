@@ -37,8 +37,8 @@ public class MainViewController implements Initializable{
 	@FXML
 	public void onMenuItemDepartmentAction() {
 		loadView("/gui/DepartmentList.fxml", (DepartmentListController controller) -> {
-			controller.setDepartmentService(new DepartmentService());
 			try {
+				controller.setDepartmentService(new DepartmentService());
 				controller.updateTableView();
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
